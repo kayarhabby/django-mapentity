@@ -53,14 +53,6 @@ class MapEntityTest(TestCase):
     def get_expected_json_attrs(self):
         return {}
 
-    def setUp(self):
-        if os.path.exists(settings.MEDIA_ROOT):
-            self.tearDown()
-        os.makedirs(settings.MEDIA_ROOT)
-
-    def tearDown(self):
-        shutil.rmtree(settings.MEDIA_ROOT)
-
     def login(self):
         self.user = self.userfactory(password='booh')
         success = self.client.login(username=self.user.username, password='booh')
