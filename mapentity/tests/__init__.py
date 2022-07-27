@@ -61,14 +61,8 @@ class MapEntityTest(TestCase):
         return {}
 
     def setUp(self):
-        if os.path.exists(settings.MEDIA_ROOT):
-            self.tearDown()
-        os.makedirs(settings.MEDIA_ROOT)
         if self.user:
             self.client.force_login(user=self.user)
-
-    def tearDown(self):
-        shutil.rmtree(settings.MEDIA_ROOT)
 
     @classmethod
     def setUpTestData(cls):
