@@ -6,7 +6,7 @@ import string
 import time
 from datetime import datetime
 from mimetypes import types_map
-from urllib.parse import urljoin, quote
+from urllib.parse import urlencode, urljoin, quote
 
 import bs4
 import requests
@@ -142,13 +142,18 @@ def convertit_url(url, from_type=None, to_type=None, proxy=False, auth_token=Non
         mimetype = types_map[extension]
 
     fromparam = ("&from=%s" % quote(from_type)) if from_type is not None else ''
-    token_param = "&auth_token={}".format(auth_token) if auth_token else ''
-    token_param = "?auth_token=1234"
-    params = f"to={quote(mimetype)}&url={quote(url)}{token_param}{fromparam}"
+    #token_param = "&auth_token={}".format(auth_token) if auth_token else ''
+    params = f"to={quote(mimetype)}&url={quote(url)}?{urlencode({'auth_token': auth_token})}{fromparam}"
     url = '{server}/?{params}'.format(server=app_settings['CONVERSION_SERVER'],
                                       params=params)
     print(url)
     return url
+
+    #token_param = "&auth_token={}".format(auth_token) if auth_token else ''
+    # #token_param = "1234"
+    # params = f"to={quote(mimetype)}&url={quote(url)}?{urlencode({'auth_token': '1234'})}{fromparam}"
+    # url = '{server}/?{params}'.format(server=app_settings['CONVERSION_SERVER'],
+    #                                   params=params)
 
 
 def convertit_download(url, destination, from_type=None, to_type='application/pdf', headers=None):

@@ -262,7 +262,7 @@ class BaseMapEntityMixin(DuplicateMixin, models.Model):
 
     def get_document_url(self):
         url = reverse(self._entity.url_name(ENTITY_DOCUMENT), args=[str(self.pk)])
-        return f"{url}?{urlencode({'auth_token': '1234'})}"
+        return f"{url}?auth_token={self.get_token}"
 
     def get_token(self):
         return TokenManager.generate_token()

@@ -56,6 +56,7 @@ class AutoLoginMiddleware:
                     TokenManager.delete_token(auth_token)
                     print("SUPPRIME")
                 else:
+                    print("BADTOKEN")
                     logger.warning(f"not authentified {auth_token}")
         print(self.get_response(request))
         return self.get_response(request)
