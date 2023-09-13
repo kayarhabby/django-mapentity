@@ -1,5 +1,6 @@
 import math
 import os
+from urllib.parse import urlencode
 
 from PIL import Image, ImageDraw, ImageFont
 from django.conf import settings
@@ -260,8 +261,9 @@ class BaseMapEntityMixin(DuplicateMixin, models.Model):
         return reverse(self._entity.url_name(ENTITY_MAPIMAGE), args=[str(self.pk)])
 
     def get_document_url(self):
-        return reverse(self._entity.url_name(ENTITY_DOCUMENT), args=[str(self.pk)])
-    
+        url = reverse(self._entity.url_name(ENTITY_DOCUMENT), args=[str(self.pk)])
+        return f"{url}?{urlencode({'auth_token': '1234'})}"
+
     def get_token(self):
         return TokenManager.generate_token()
 

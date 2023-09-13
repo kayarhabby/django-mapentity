@@ -35,8 +35,14 @@ class AutoLoginMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
+        print(8888888888888888888888888888888)
+        print(request.user)
         if request.user.is_anonymous:
+            print("auth_token")
             auth_token = request.GET.get("auth_token")
+            print(request)
+            print(request.GET.keys())
+            print(auth_token)
             if auth_token:
                 print("TOKEN")
                 internal_user = get_internal_user()
