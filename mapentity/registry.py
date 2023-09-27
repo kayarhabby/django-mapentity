@@ -37,6 +37,8 @@ class MapEntityOptions:
 
     def __init__(self, model):
         self.model = model
+        if callable(self.menu):
+            self.menu = self.menu()
         self.label = model._meta.verbose_name_plural
         self.app_label = model._meta.app_label
         self.modelname = model._meta.model_name
