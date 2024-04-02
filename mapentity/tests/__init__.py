@@ -50,6 +50,7 @@ class AdjustDebugLevel:
 
 @override_settings(MEDIA_ROOT=TemporaryDirectory().name)
 class MapEntityTest(TestCase):
+    document_markup_url = None
     model = None
     modelfactory = None
     userfactory = None
@@ -134,7 +135,7 @@ class MapEntityTest(TestCase):
         mock_requests.get.return_value.content = b'<p id="properties">Mock</p>'
 
         obj = self.modelfactory.create()
-        response = self.client.get(reverse(obj._entity.url_name(ENTITY_MARKUP), args=[obj.pk]))
+        response = self.client.get(self.document_markup_url or reverse(obj._entity.url_name(ENTITY_MARKUP), args=[obj.pk]))
         self.assertEqual(response.status_code, 200)
 
     def test_bbox_filter(self):
