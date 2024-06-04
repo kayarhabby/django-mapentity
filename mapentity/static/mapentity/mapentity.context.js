@@ -80,7 +80,7 @@ MapEntity.Context = new function() {
                         map.fitBounds(map.resetviewControl.getBounds());
                         var maxZoom = $(map._container).data('fitmaxzoom');
                         if (map.getZoom() > maxZoom) {
-                            console.log('Limited zoom to ', maxZoom, '. Was ', map.getZoom());
+                            console.debug('Limited zoom to ', maxZoom, '. Was ', map.getZoom());
                             map.setZoom(maxZoom);
                         }
                     }
@@ -102,7 +102,7 @@ MapEntity.Context = new function() {
             context = self.__loadFullContext(kwargs);
         }
         if (!context) {
-            console.warn("No context found.");
+            console.debug("No context found.");
             map.fitBounds(map.options.maxBounds);
             return;  // No context, no restore.
         }

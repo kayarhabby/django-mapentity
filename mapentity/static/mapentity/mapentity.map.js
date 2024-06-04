@@ -128,7 +128,7 @@ $(window).on('entity:map', function (e, data) {
         map.fitBounds(mapBounds);
         var maxZoom = $container.data('fitmaxzoom');
         if (map.getZoom() > maxZoom) {
-            console.log('Limited zoom to ', maxZoom, '. Was ', map.getZoom());
+            console.debug('Limited zoom to ', maxZoom, '. Was ', map.getZoom());
             map.setZoom(maxZoom);
         }
         map.resetviewControl.getBounds = function () { return mapBounds; };
@@ -184,7 +184,7 @@ $(window).on('entity:map:detail', function (e, data) {
     });
 
     function _showSingleObject(geojson) {
-        console.log(data);
+        console.debug(data);
         var DETAIL_STYLE = L.Util.extend(window.SETTINGS.map.styles.detail, {clickable: false});
 
         // Appearance of geometry for export can be controlled via setting
