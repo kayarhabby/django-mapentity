@@ -577,7 +577,7 @@ span.filter-info {
     flex: 1 1 auto;
 }
 
-.details-panel .download-group {
+.details-panel .action-group {
     margin: .75rem 0;
     text-align: right;
 }

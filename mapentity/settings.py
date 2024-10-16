@@ -160,16 +160,14 @@ _MODELTRANSLATION_DEFAULT_LANGUAGE = getattr(settings, 'MODELTRANSLATION_DEFAULT
 setattr(settings, 'MODELTRANSLATION_LANGUAGES', _MODELTRANSLATION_LANGUAGES)
 setattr(settings, 'MODELTRANSLATION_DEFAULT_LANGUAGE', _MODELTRANSLATION_DEFAULT_LANGUAGE)
 
-# default django message tags matching bootstrap4
-_MESSAGE_TAGS = getattr(settings, 'MESSAGE_TAGS', {
+
+setattr(settings, 'MESSAGE_TAGS', {
     messages.SUCCESS: 'alert-success',
     messages.INFO: 'alert-info',
     messages.DEBUG: 'alert-info',
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 })
-
-setattr(settings, 'MESSAGE_TAGS', _MESSAGE_TAGS)
 
 # crispy form default config with bootstrap4
 _CRISPY_ALLOWED_TEMPLATE_PACKS = getattr(settings, 'CRISPY_ALLOWED_TEMPLATE_PACKS', ('bootstrap4', ))

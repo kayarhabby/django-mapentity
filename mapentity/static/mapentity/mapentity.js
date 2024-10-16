@@ -2,7 +2,13 @@ if (!window.MapEntity) window.MapEntity = {};
 
 
 $(document).ready(function (e) {
-
+    $('[data-toggle=confirmation]').confirmation({
+      rootSelector: '[data-toggle=confirmation]',
+        onConfirm: function() {
+		$('#form-duplicate').submit();
+	}
+      // other options
+    });
     // Scrollable panels
     var fillmax = function () {
         $('.scrollable').each(function () {

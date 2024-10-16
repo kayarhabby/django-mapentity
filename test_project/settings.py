@@ -15,6 +15,7 @@ import os
 import sys
 from tempfile import TemporaryDirectory
 
+from django.contrib import messages
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -207,6 +208,12 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
 MODELTRANSLATION_LANGUAGES = ('en', 'fr', 'zh-hant')
-
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert-success',
+    messages.INFO: 'alert-info',
+    messages.DEBUG: 'alert-info',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 if 'test' in sys.argv:
     MEDIA_ROOT = TemporaryDirectory().name

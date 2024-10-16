@@ -11,15 +11,19 @@
 {% block objectname %}{{ object }}{% endblock objectname %}
 
 {% block mainpanel %}
-    <div class="div-center">
-        <div class="alert alert-block">
-            <h4 class="alert-heading">Warning!</h4>
-            {% blocktrans %}Do you really wish to delete <strong>{{ object }}</strong> ?{% endblocktrans %}
-        </div>
+    <div class="col-12 col-md-4 offset-md-4">
+    <div class="card mb-3">
+      <div class="card-header  text-white bg-danger ">{% translate "Warning!" %}</div>
+      <div class="card-body">
+        <h5 class="card-title">{% blocktrans with data=object %}Do you really wish to delete <strong>{{ data }}</strong>?{% endblocktrans %}</h5>
         <form method="POST" action="{{ object.get_delete_url }}">
             {% csrf_token %}
-            <input type="submit" class="btn btn-danger" value="{% trans "Yes, delete" %}"></input>
-            <a class="btn btn-inverse" href="{{ object.get_update_url }}">{% trans "No, back to edit view" %}</a>
+            <div class="btn-toolbar justify-content-between" role="toolbar">
+                <input type="submit" class="btn btn-danger" value="{% trans "Yes, delete" %}" />
+                <a class="btn btn-inverse" href="{{ object.get_detail_url }}">{% trans "No, back to detail view" %}</a>
+            </div>
         </form>
+      </div>
+    </div>
     </div>
 {% endblock mainpanel %}
