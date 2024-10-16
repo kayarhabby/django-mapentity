@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 13:37+0000\n"
+"POT-Creation-Date: 2024-10-16 13:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,15 +128,23 @@ msgstr "Critères choisis"
 msgid "No filter"
 msgstr "Aucun filtre"
 
-#, python-format
-msgid "Do you really wish to delete <strong>%(object)s</strong> ?"
-msgstr "Voulez-vous vraiment supprimer <strong>%(object)s</strong> ?"
+msgid "Warning!"
+msgstr "Attention !"
+
+msgid "Do you really wish to delete <strong>%(data)s</strong>?"
+msgstr "Voulez-vous vraiment supprimer <strong>%(data)s</strong> ?"
 
 msgid "Yes, delete"
 msgstr "Oui, supprimer"
 
-msgid "No, back to edit view"
-msgstr "Non, retour à la vue d'édition"
+msgid "No, back to detail view"
+msgstr "Non, retourner à la fiche objet"
+
+msgid "Update"
+msgstr "Modifier"
+
+msgid "Export"
+msgstr "Exporter"
 
 msgid "PDF"
 msgstr "PDF"
@@ -147,6 +155,18 @@ msgstr "ODT"
 msgid "DOC"
 msgstr "DOC"
 
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Duplicate"
+msgstr "Dupliquer"
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid "No"
+msgstr "Non"
+
 msgid "Properties"
 msgstr "Propriétés"
 
@@ -155,12 +175,6 @@ msgstr "Fichiers liés"
 
 msgid "History"
 msgstr "Historique"
-
-msgid "Duplicate"
-msgstr "Dupliquer"
-
-msgid "Update"
-msgstr "Modifier"
 
 msgid "Date"
 msgstr "Date"

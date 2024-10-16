@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 13:37+0000\n"
+"POT-Creation-Date: 2024-10-16 13:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,14 +129,23 @@ msgstr ""
 msgid "No filter"
 msgstr ""
 
+msgid "Warning!"
+msgstr ""
+
 #, python-format
-msgid "Do you really wish to delete <strong>%(object)s</strong> ?"
+msgid "Do you really wish to delete <strong>%(data)s</strong>?"
 msgstr ""
 
 msgid "Yes, delete"
 msgstr ""
 
-msgid "No, back to edit view"
+msgid "No, back to detail view"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Export"
 msgstr ""
 
 msgid "PDF"
@@ -148,6 +157,18 @@ msgstr ""
 msgid "DOC"
 msgstr ""
 
+msgid "Actions"
+msgstr ""
+
+msgid "Duplicate"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
 msgid "Properties"
 msgstr ""
 
@@ -155,12 +176,6 @@ msgid "Attached files"
 msgstr ""
 
 msgid "History"
-msgstr ""
-
-msgid "Duplicate"
-msgstr ""
-
-msgid "Update"
 msgstr ""
 
 msgid "Date"
