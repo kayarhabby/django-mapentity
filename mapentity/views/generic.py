@@ -455,11 +455,11 @@ class MapEntityDetail(ModelViewMixin, DetailView):
         context['logentries_hellip'] = logentries.count() > logentries_max
 
         perm_update = self.get_model().get_permission_codename(mapentity_models.ENTITY_UPDATE)
-        can_edit = user_has_perm(self.request.user, perm_update)
-        context['can_edit'] = can_edit
+        context['can_edit'] = user_has_perm(self.request.user, perm_update)
+        perm_delete = self.get_model().get_permission_codename(mapentity_models.ENTITY_DELETE)
+        context['can_delete'] = user_has_perm(self.request.user, perm_delete)
         perm_create = self.get_model().get_permission_codename(mapentity_models.ENTITY_CREATE)
-        can_add = user_has_perm(self.request.user, perm_create)
-        context['can_add'] = can_add
+        context['can_add'] = user_has_perm(self.request.user, perm_create)
         context['attachment_form_class'] = AttachmentForm
         context['template_attributes'] = self.template_attributes
         context['mapentity_weasyprint'] = app_settings['MAPENTITY_WEASYPRINT']

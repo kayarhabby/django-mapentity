@@ -23,9 +23,9 @@
                 {% block buttons_after_action %}
                 {% endblock %}
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                            aria-expanded="false" title="{% translate "Export" %}">
-                        <i class="bi bi-file-earmark-arrow-down"></i>
+                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"
+                            aria-expanded="false">
+                        <i class="bi bi-file-earmark-arrow-down"></i> {% translate "Export" %}
                     </button>
                     <div class="dropdown-menu">
                         {% block download %}
@@ -48,7 +48,8 @@
                     </div>
                 </div>
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-outline-danger dropdown-toggle" data-toggle="dropdown"
+            {% if (can_add and model.can_duplicate) or cand_delete %}
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
                         aria-expanded="false" title="{% translate "Actions" %}">
                     <i class="bi bi-gear"></i>
                 </button>
@@ -69,11 +70,19 @@
                                 <i class="bi bi-files"></i> {% trans "Duplicate" %}
                             </span>
                         {% endif %}
+                    {% if can_delete %}
                         <a class="dropdown-item" href="{{ object.get_delete_url }}">
                             <i class="bi bi-trash text-danger"></i> {% translate "Delete" %}
                         </a>
+                        {% endif %}
                     </div>
                 </div>
+            {% else %}
+                <button type="button" class="btn btn-outline-secondary btn-disabled"
+                        aria-expanded="false" title="{% translate "Actions" %}">
+                    <i class="bi bi-gear"></i>
+                </button>
+            {% endif %}
             </div>
 
         </div>
@@ -83,7 +92,7 @@
                     <a id="tab-properties" class="nav-link active" href="#properties" data-toggle="tab"><i
                             class="bi bi-list-task"></i>
                         <span class="d-none d-sm-inline">{% trans "Properties" %}</span>
-                        {% smart_include "propertiestab" %}
+
                     </a>
                 </li>
                 {% block before_attachments_extra_tab_nav %}
